@@ -52,8 +52,5 @@ class FrontPageController extends Controller
         return view('Tourism_business/front_testimonail',$data);
     }
 
-    public function not_found(){
-        $data['title']="404 Not Found";
-        return view('Tourism_business/front_404_page',$data);
-    }
+
 }

@@ -25,7 +25,7 @@ Route::get('/destination',[FrontPageController::class,'destination'])->name('fro
 Route::get('/booking',[FrontPageController::class,'booking'])->name('front.booking');
 Route::get('/guide',[FrontPageController::class,'travel_guide'])->name('front.travel_guide');
 Route::get('/testimonail',[FrontPageController::class,'testimonail'])->name('front.testimonail');
-Route::get('/404',[FrontPageController::class,'not_found'])->name('front.not_found');
+
 
 
 
