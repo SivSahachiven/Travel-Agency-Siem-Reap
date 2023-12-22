@@ -25,8 +25,13 @@ Route::get('/lang/{locale}', function ($locale) {
     return redirect()->back();
   });
 
-Route::get('/auth', function () {
-    return view('layouts.auth_app');
+// Route::get('/auth', function () {
+//     return view('layouts.auth_app');
+// });
+
+Route::get('/admin-test', function () {
+    // return view('layouts.master_app');
+    return view('admin.services.index');
 });
 
 Route::get('/',[FrontPageController::class,'index'])->name('front.home');
