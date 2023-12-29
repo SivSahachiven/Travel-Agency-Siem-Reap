@@ -43,7 +43,7 @@ List Of Services
                   <th>Browser</th>
                   <th>Platform(s)</th>
                   <th>Engine version</th>
-                  <th>CSS grade</th>
+                  <th>Option</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -53,17 +53,23 @@ List Of Services
                     Explorer 4.0
                   </td>
                   <td>Win 95+</td>
-                  <td> 4</td>
-                  <td>X</td>
+                  <td>4</td>
+                  <td>
+                    <a href="#" class="btn btn-success"><i class="fa fa-eye"></i> View</a>
+                    <a href="#" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
+                    <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>
+                  </td>
                 </tr>
-                <tr>
+                {{-- <tr>
                   <td>Trident</td>
                   <td>Internet
                     Explorer 5.0
                   </td>
                   <td>Win 95+</td>
                   <td>5</td>
-                  <td>C</td>
+                  <td>
+
+                  </td>
                 </tr>
                 <tr>
                   <td>Trident</td>
@@ -73,8 +79,15 @@ List Of Services
                   <td>Win 95+</td>
                   <td>5.5</td>
                   <td>A</td>
-                </tr>
-
+                </tr> --}}
+                <tfoot>
+                  <tr>
+                    <th>Rendering engine</th>
+                    <th>Browser</th>
+                    <th>Platform(s)</th>
+                    <th>Engine version</th>
+                    <th>Css grade</th>
+                  </tr>
                 </tfoot>
               </table>
             </div>

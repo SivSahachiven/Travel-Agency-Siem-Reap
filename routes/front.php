@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FrontPageController;
+use App\Http\Controllers\Admin\ServiceController;
 
 Route::get('front_agency',Function (){
     return view ('Tourism_business/front_agency');
@@ -44,6 +45,7 @@ Route::get('/booking',[FrontPageController::class,'booking'])->name('front.booki
 Route::get('/guide',[FrontPageController::class,'travel_guide'])->name('front.travel_guide');
 Route::get('/testimonail',[FrontPageController::class,'testimonail'])->name('front.testimonail');
 
+Route::get('/admin.Services',[ServiceController::class,'index'])->name('admin.services');
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
