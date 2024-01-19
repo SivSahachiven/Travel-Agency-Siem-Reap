@@ -12,15 +12,16 @@ List Of Services
 @push('page_header')
     <section class="content-header">
         <div class="container-fluid">
-        <div class="row mb-2">
+          <div class="row mb-2">
             <div class="col-sm-6">
-            <h1>List Of Services</h1>
+                <h1>Services List</h1>
             </div>
-            <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">List Of Services</li>
-            </ol>
+            <div class="col-sm-6"> 
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Services List</li>
+                    <li class="breadcrumb-item"><a class="btn btn-primary"href="{{ route('admin.services.create') }}">create</a></li>
+                </ol>
             </div>
         </div>
         </div><!-- /.container-fluid -->
@@ -32,63 +33,56 @@ List Of Services
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-              <h3 class="card-title">List Of Services</h3>
+              <h3 class="card-title">Services List</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                <tr>
-                  <th>Rendering engine</th>
-                  <th>Browser</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                  <th>Option</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td>4</td>
-                  <td>
-                    <a href="#" class="btn btn-success"><i class="fa fa-eye"></i> View</a>
-                    <a href="#" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
-                    <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>
-                  </td>
-                </tr>
-                {{-- <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td>5</td>
-                  <td>
-
-                  </td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.5
-                  </td>
-                  <td>Win 95+</td>
-                  <td>5.5</td>
-                  <td>A</td>
-                </tr> --}}
-                <tfoot>
                   <tr>
-                    <th>Rendering engine</th>
-                    <th>Browser</th>
-                    <th>Platform(s)</th>
-                    <th>Engine version</th>
-                    <th>Css grade</th>
+                      <th>ID</th>
+                      <th>Title</th>
+                      <th>Description</th>
+                      <th>Avatar</th>
+                      <th>status</th>
+                      <th>Options</th>
                   </tr>
-                </tfoot>
+              </thead>
+              <tbody>
+                  @foreach ($services as $item)
+                      <tr>
+                        <td>{{ $item->id }}</td>
+                        <td>{{ $item->title }}</td>
+                        <td>{{ $item->description }}</td>
+                        <td>
+                            <img src="{{ asset('storage/uploads/'.$item->image) }}" width="50"
+                            class="img-thumbnail rounded-circle" alt="">
+                        </td>
+                        <td> {{ $item->status }}</td>
+                        <td>
+                            <form action="{{ route('admin.services.destroy',$item->id) }}" method="post">
+                                @csrf
+                            <a href="{{ route('admin.services.show', $item->id) }}" class="btn btn-success"> <i
+                                    class="fa fa-eye"></i></a>
+                            <a class="btn btn-primary" href="{{ route('admin.services.edit',$item->id) }}"><i
+                                    class="fa fa-edit"></i></a>
+
+                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                        </form>
+                        </td>
+                      </tr>
+                  @endforeach
+              </tbody>
+              <tfoot>
+                  <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Avatar</th>
+                    <th>status</th>
+                    <th>Options</th>
+                  </tr>
+              </tfoot>
               </table>
             </div>
             <!-- /.card-body -->

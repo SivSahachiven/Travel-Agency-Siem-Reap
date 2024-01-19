@@ -49,11 +49,10 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <div class="row">
+       
             <!-- Default box -->
             @yield('content')
             <!-- /.card -->
-        </div>
     </div>
     </section>
     <!-- /.content -->
